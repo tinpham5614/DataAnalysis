@@ -1,0 +1,26 @@
+Python-Practice 4.10.1: Finding areas and percentiles.
+To find the area under a chi-square distribution or the  at which the distribution has a given area, the chi2 object must be imported from the scipy.stats library. Next, the degrees of freedom and  are defined.
+
+from scipy.stats import chi2
+
+# Defines the degrees of freedom and chi-square_0
+df = 7
+x2 =  1.689
+chi2.cdf can be used to calculate the area under the curve between  and .
+
+# Calculates the area under the curve between 0 and chi-square_0
+area = chi2.cdf(x2, df)
+
+print(area)
+0.02496315095256541
+Conversely, if the area is defined, chi2.ppf gives the  value, or percentile, necessary to obtain that area.
+
+# Defines an area under the curve
+
+a = 0.025
+
+# Calculates the percentile
+perc = chi2.ppf(a, df)
+
+print(perc)
+1.6898691806773554
