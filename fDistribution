@@ -24,3 +24,21 @@ perc = chi2.ppf(a, df)
 
 print(perc)
 1.6898691806773554
+
+-------------------------------------------
+Example 4.10.3: Finding probability.
+A company makes LED light bulbs with a stated life expectancy of  hours. The standard deviation is  hours. A customer buys  bulbs and finds a standard deviation of  hours. If the customer bought  more bulbs, what is the probability that the standard deviation of the new sample would be less than  hours?
+
+Solution
+As shown in the example above, the chi-square statistic for this situation is . To find the probability that the standard deviation of a new sample of  bulbs would be less than  hours,  and  can be entered into statistical software.
+
+from scipy.stats import chi2
+
+df = 7
+x2 = 3.111
+
+area = chi2.cdf(x2, df)
+
+print(area)
+0.12545259857860666
+Thus the probability is  that the standard deviation of another sample of  LED bulbs will be less than  hours.
