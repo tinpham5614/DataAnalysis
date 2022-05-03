@@ -26,6 +26,7 @@ print(perc)
 1.6898691806773554
 
 -------------------------------------------
+
 Example 4.10.3: Finding probability.
 A company makes LED light bulbs with a stated life expectancy of  hours. The standard deviation is  hours. A customer buys  bulbs and finds a standard deviation of  hours. If the customer bought  more bulbs, what is the probability that the standard deviation of the new sample would be less than  hours?
 
@@ -42,3 +43,22 @@ area = chi2.cdf(x2, df)
 print(area)
 0.12545259857860666
 Thus the probability is  that the standard deviation of another sample of  LED bulbs will be less than  hours.
+
+-------------------------------------------
+
+Example 4.10.4: Finding percentiles.
+What is the th percentile of a chi-square distribution with  degrees of freedom?
+
+Solution
+The th percentile is the  value at which the volume under the chi-square curve is . This value can be found using statistical software with  and .
+
+from scipy.stats import chi2
+
+df = 5
+a = 0.95
+
+perc = chi2.ppf(a, df)
+
+print(perc)
+11.070497693516351
+Thus, the  value that marks the th percentile for a chi-square distribution with  degrees of freedom is .
